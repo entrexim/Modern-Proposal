@@ -1,0 +1,119 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: black;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Floating Hearts Background */
+.bigbox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.box, .box2 {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px;
+    animation: animate 5s linear infinite;
+    animation-duration: calc(25s / var(--i));
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+/* Main Content Styling */
+.main {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgb(0, 191, 255);
+    transition: background-color 0.3s;
+}
+
+.btn button:hover {
+    background-color: #555;
+}
+
+/* Dynamic Messages Styling */
+.js, .js2 {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .btn button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .js, .js2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .js, .js2 {
+        font-size: 1rem;
+    }
+}
